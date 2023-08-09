@@ -31,7 +31,7 @@ public class DishController : Controller
 
 
     // New Route * ============================================
-    [HttpGet("Dishes/new")]
+    [HttpGet("dishes/new")]
     public IActionResult NewDish()
     {
         return View("New");
@@ -39,7 +39,7 @@ public class DishController : Controller
 
 
     // Create Dish method ============================================
-    [HttpPost("Dishes/create")]
+    [HttpPost("dishes/create")]
     public IActionResult CreatePost(Dish newDish)
     {
         if(!ModelState.IsValid)
@@ -109,11 +109,11 @@ public class DishController : Controller
 
 
     //Delete one dish Method ============================================
-    [HttpPost("posts/{postId}/delete")]
-    public IActionResult Delete(int postId)
+    [HttpPost("dishes/{dishId}/delete")]
+    public IActionResult Delete(int dishId)
     {
-        Post? post = db.Posts.FirstOrDefault(post => post.PostId == postId);
-        db.Posts.Remove(post);
+        Dish? dish = db.Dishes.FirstOrDefault(dish => dish.DishId == dishId);
+        db.Dishes.Remove(dish);
         db.SaveChanges();
         // ListSortDescription in the all posts for Index*
         return RedirectToAction("Index");

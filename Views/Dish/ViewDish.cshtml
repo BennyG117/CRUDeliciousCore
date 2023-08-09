@@ -1,0 +1,30 @@
+@* view one dish page *@
+
+@model Dish
+
+
+    <h1 class="display-4"> @Model.Name</h1>
+        <div>
+            <p>NAVBAR HERE</p>
+        </div>
+
+        <div>
+            <h3>@Model.Name by @Model.Chef</h3>
+            <hr/>
+        </div>
+<div class="">
+    <h2>@Model.Description</h2>
+    <h2>@Model.Calories</h2>
+    <h2>@Model.Tastiness</h2>
+
+    @* matching route to the controller* *@
+    <div><a asp-controller="Dish" asp-action="Edit" asp-route-postId="@Model.DishId" class="btn btn-outline-warning">Edit</a></div>
+
+    @* match the "dishId" with the delete method in the dish controller* *@
+    <div>
+        <form asp-controller="Dish" asp-action="Delete" asp-route-postId="@Model.DishId">
+            <button class="btn btn-outline-danger mt-3">Delete</button>
+        </form>
+    </div>
+
+</div>

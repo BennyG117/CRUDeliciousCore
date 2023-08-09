@@ -1,0 +1,59 @@
+@* Add a New Dish page *@
+
+@model Dish
+
+<h1>Add a new Dish!</h1>
+
+<div>
+    <p>NAVBAR HERE</p>
+</div>
+
+<div class="container w-75 mx-auto">
+
+    <form asp-action="CreateDish" asp-controller="Dish" method="post" class="shadow p-3 rounded">
+        @* section *@
+        <div class="mb-3">
+            <label asp-for="Chef">Chef's Name</label>
+            <input asp-for="Chef" type="text" class="form-control"/>
+            <span asp-validation-for="Chef" class="text-danger font-weight-bold"></span>
+        </div>
+        @* section *@
+        <div class="mb-3">
+            <label asp-for="Name">Name of Dish</label>
+            <input asp-for="Name" type="text" class="form-control"/>
+            <span asp-validation-for="Name" class="text-danger font-weight-bold"></span>
+        </div>
+        @* section *@
+        <div class="mb-3">
+            <label asp-for="Calories"></label>
+            <input asp-for="Calories" type="number" class="form-control"/>
+            <span asp-validation-for="Calories" class="text-danger font-weight-bold"></span>
+        </div>
+        @* section *@
+        <div class="mb-3">
+            <label asp-for="Tastiness"></label>
+            <select asp-for="Tastiness"  class="form-control" name="Tastiness">
+                <option value="">Select a number</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+            </select>
+            <span asp-validation-for="Tastiness" class="text-danger font-weight-bold"></span>
+        </div>
+
+        @* section *@
+        <div class="mb-3">
+            <label asp-for="Description"></label>
+            <textarea asp-for="Description" type="text" class="form-control" placeholder="Write a description..."></textarea>
+            <span asp-validation-for="Description" class="text-danger font-weight-bold"></span>
+        </div>
+
+    <button class="btn btn-outline-dark">Add a Dish</button>
+
+    </form>
+
+
+</div>

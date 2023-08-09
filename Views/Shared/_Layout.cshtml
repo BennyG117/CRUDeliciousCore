@@ -14,7 +14,7 @@
             <div class="container-fluid">
 
                 @* REMINDER - UPDATES MAY BE NEEDED - switch home to "tbd" *@
-                <a class="navbar-brand" asp-area="" asp-controller="Post" asp-action="Index">CRUDeliciousCore</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Dish" asp-action="Index">CRUDeliciousCore</a>
                 @*^^^ REMINDER - UPDATES MAY BE NEEDED ^^^*@
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -26,7 +26,7 @@
 
                         @* REMINDER - UPDATES MAY BE NEEDED - switch home to "tbd"*@
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Post" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Dish" asp-action="Index">Home</a>
                         </li>
                         @*^^^ REMINDER - UPDATES MAY BE NEEDED ^^^*@
                         
@@ -34,7 +34,7 @@
 
                         @*REMINDER - UPDATES MAY BE NEEDED: switching home to "tbd" // taken from new view route "Newtbd" in "tbd" controller*@
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Dish" asp-action="New">Add a Dish</a>
                         </li>
                         @*^^^ REMINDER - UPDATES MAY BE NEEDED ^^^*@
 
@@ -56,7 +56,7 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2023 - CRUDeliciousCore - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2023 - CRUDeliciousCore - <a asp-area="" asp-controller="Home" asp-action="New">Add a Dish</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
