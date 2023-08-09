@@ -7,27 +7,26 @@
 @model List<Dish>
 
 <div class="text-center">
-
-    <h1 class="display-4">Welcome to @ViewData["Title"]</h1>
-        <div>
-            <p>NAVBAR HERE</p>
-        </div>
-
-        <div>
-            <h3>Check out some recent dishes:</h3>
-            <hr/>
-        </div>
-
-@* lower case dish can be any name* *@
-@foreach (Dish dish in Model)
-{
-    <div>
-        <ul>
-            <li>
-                <a asp-controller="Dish" asp-action="ViewDish" asp-route-dishId="@dish.DishId" class="text-dark p-1">@dish.Name</a> by @dish.Chef</li>
-        </ul>
+    <header class="d-flex justify-content-center mt-4">
+        <h1 class="">Welcome to @ViewData["Title"]</h1>
+    </header>
+    <div class="d-flex justify-content-center align-items-center">
+        <a class="text-dark nav-link" asp-area="" asp-controller="Dish" asp-action="Index">Home</a>|<a class="text-dark nav-link" asp-area="" asp-controller="Dish" asp-action="NewDish">Add a Dish</a>
     </div>
-}
 
+    <div class="d-flex flex-column justify-content-start text-start mt-3">
+        <h3>Check out some recent dishes:</h3>
+        <hr class="w-75" />
 
+    @* lower case dish can be any name* *@
+    @foreach (Dish dish in Model)
+    {
+        <div>
+            <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a asp-controller="Dish" asp-action="ViewDish" asp-route-dishId="@dish.DishId" class="text-dark p-1">@dish.Name</a> by @dish.Chef</li>
+            </ul>
+        </div>
+    }
+    </div>
 </div>

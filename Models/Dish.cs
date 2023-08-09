@@ -23,7 +23,7 @@ public class Dish
 
     // Tastiness ======================== 
     [Required]
-    [Range(1,6, ErrorMessage = "You must include a Tastiness score between 1 - 5.")]
+    [Range(1,5, ErrorMessage = "You must include a Tastiness score between 1 - 5.")]
     public int Tastiness {get; set;}
 
 

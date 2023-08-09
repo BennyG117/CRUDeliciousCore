@@ -10,40 +10,15 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
 
-                @* REMINDER - UPDATES MAY BE NEEDED - switch home to "tbd" *@
-                <a class="navbar-brand" asp-area="" asp-controller="Dish" asp-action="Index">CRUDeliciousCore</a>
-                @*^^^ REMINDER - UPDATES MAY BE NEEDED ^^^*@
-
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-
-                        @* REMINDER - UPDATES MAY BE NEEDED - switch home to "tbd"*@
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Dish" asp-action="Index">Home</a>
-                        </li>
-                        @*^^^ REMINDER - UPDATES MAY BE NEEDED ^^^*@
-                        
-
-
-                        @*REMINDER - UPDATES MAY BE NEEDED: switching home to "tbd" // taken from new view route "Newtbd" in "tbd" controller*@
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Dish" asp-action="New">Add a Dish</a>
-                        </li>
-                        @*^^^ REMINDER - UPDATES MAY BE NEEDED ^^^*@
-
-                    
-                    </ul>
-                </div>
-            </div>
-        </nav>
     </header>
+                        @* REMINDER - UPDATES MAY BE NEEDED - switch home to "tbd"*@
+                        
+                            @* <div>
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Dish" asp-action="Index">Home</a>| <a class="nav-link text-dark" asp-area="" asp-controller="Dish" asp-action="NewDish">Add a Dish</a>
+                            </div> *@
+
+                        @*^^^ REMINDER - UPDATES MAY BE NEEDED ^^^*@
 @* UPDATING LAYOUT *@
 
     <div class="container">
@@ -53,12 +28,13 @@
     </div>
 
 @* UPDATING LAYOUT *@
-
+@* 
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2023 - CRUDeliciousCore - <a asp-area="" asp-controller="Home" asp-action="New">Add a Dish</a>
         </div>
-    </footer>
+    </footer> *@
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

@@ -3,28 +3,37 @@
 @model Dish
 
 
-    <h1 class="display-4"> @Model.Name</h1>
+<div class="text-center">
         <div>
-            <p>NAVBAR HERE</p>
+            <header class="d-flex justify-content-center mt-4">
+                <h1 class="display-4"> @Model.Name</h1>
+            </header>
+        <div class="d-flex justify-content-center align-items-center">
+            <a class="text-dark nav-link" asp-area="" asp-controller="Dish" asp-action="Index">Home</a>|<a class="text-dark nav-link" asp-area="" asp-controller="Dish" asp-action="NewDish">Add a Dish</a>
         </div>
-
-        <div>
-            <h3>@Model.Name by @Model.Chef</h3>
-            <hr/>
+        <div class="d-flex flex-column text-start">
+            <div>
+                <h3>@Model.Name by @Model.Chef</h3>
+                <hr class="w-75" />
+            </div>
+            <div class="">
+                <h2 class="mt-2 mb-2">Description: @Model.Description</h2>
+                <h4 class="mt-2 mb-2">Calories: @Model.Calories</h4>
+                <h4 class="mt-2 mb-2">Tastiness: @Model.Tastiness</h4>
+            </div>
         </div>
-<div class="">
-    <h2>@Model.Description</h2>
-    <h2>@Model.Calories</h2>
-    <h2>@Model.Tastiness</h2>
-
-    @* matching route to the controller* *@
-    <div><a asp-controller="Dish" asp-action="Edit" asp-route-postId="@Model.DishId" class="btn btn-outline-warning">Edit</a></div>
-
-    @* match the "dishId" with the delete method in the dish controller* *@
-    <div>
-        <form asp-controller="Dish" asp-action="Delete" asp-route-postId="@Model.DishId">
-            <button class="btn btn-outline-danger mt-3">Delete</button>
-        </form>
+        
+            @* CHECK asp-route-"dishId"="...." *@
+            <div class="d-flex flex-row align-items-center p-3 justify-content-around">
+                <div>
+                    <a asp-controller="Dish" asp-action="Edit" asp-route-dishId="@Model.DishId" class=" shadow bg-primary text-dark btn btn-outline-primary">Edit</a>
+                </div>
+                @* match the "dishId" with the delete method in the dish controller* *@
+                <div>
+                    <form asp-controller="Dish" asp-action="Delete" asp-route-dishId="@Model.DishId">
+                        <button class="bg-danger text-dark shadow btn btn-outline-danger mt-3">Delete</button>
+                    </form>
+                </div>
+            </div>
     </div>
-
 </div>

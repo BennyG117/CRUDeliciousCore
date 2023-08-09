@@ -25,7 +25,7 @@ public class DishController : Controller
     [HttpGet("")]
     public IActionResult Index()
     {
-        List<Dish> allDishes = db.Dishes.ToList();
+        List<Dish> allDishes = db.Dishes.OrderByDescending(d => d.CreatedAt).ToList();
         return View("AllDishes", allDishes);
     }
 
@@ -40,7 +40,7 @@ public class DishController : Controller
 
     // Create Dish method ============================================
     [HttpPost("dishes/create")]
-    public IActionResult CreatePost(Dish newDish)
+    public IActionResult CreateDish(Dish newDish)
     {
         if(!ModelState.IsValid)
         {

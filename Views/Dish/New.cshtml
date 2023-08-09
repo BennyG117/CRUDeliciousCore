@@ -2,35 +2,41 @@
 
 @model Dish
 
-<h1>Add a new Dish!</h1>
 
-<div>
-    <p>NAVBAR HERE</p>
-</div>
+<div class="w-100 text-center">
 
-<div class="container w-75 mx-auto">
+    <header class="d-flex justify-content-center mt-4">
+        <h1 class="">Add a new Dish!</h1>
+    </header>
+    <div class="d-flex justify-content-center align-items-center mb-2">
+        <a class="text-dark nav-link" asp-area="" asp-controller="Dish" asp-action="Index">Home</a>|<a class="text-dark nav-link" asp-area="" asp-controller="Dish" asp-action="NewDish">Add a Dish</a>
+    </div>
 
-    <form asp-action="CreateDish" asp-controller="Dish" method="post" class="shadow p-3 rounded">
-        @* section *@
-        <div class="mb-3">
-            <label asp-for="Chef">Chef's Name</label>
-            <input asp-for="Chef" type="text" class="form-control"/>
-            <span asp-validation-for="Chef" class="text-danger font-weight-bold"></span>
+    <form asp-action="CreateDish" asp-controller="Dish" method="post" class="shadow p-3 rounded d-flex p-2 justify-content-center">
+            @* Column 1 *@
+        <div class="w-25 me-2 text-start">
+            @* section *@
+            <div class="mb-3">
+                <label asp-for="Chef">Chef's Name</label>
+                <input asp-for="Chef" type="text" class="form-control" placeholder="Chef's name here..."/>
+                <span asp-validation-for="Chef" class="text-danger font-weight-bold"></span>
+            </div>
+            @* section *@
+            <div class="mb-3">
+                <label asp-for="Name">Name of Dish</label>
+                <input asp-for="Name" type="text" class="form-control" placeholder="Name of dish here..."/>
+                <span asp-validation-for="Name" class="text-danger font-weight-bold"></span>
+            </div>
+            @* section *@
+            <div class="mb-3">
+                <label asp-for="Calories"></label>
+                <input asp-for="Calories" type="number" class="form-control" placeholder="Number of calories..."/>
+                <span asp-validation-for="Calories" class="text-danger font-weight-bold"></span>
+            </div>
         </div>
-        @* section *@
-        <div class="mb-3">
-            <label asp-for="Name">Name of Dish</label>
-            <input asp-for="Name" type="text" class="form-control"/>
-            <span asp-validation-for="Name" class="text-danger font-weight-bold"></span>
-        </div>
-        @* section *@
-        <div class="mb-3">
-            <label asp-for="Calories"></label>
-            <input asp-for="Calories" type="number" class="form-control"/>
-            <span asp-validation-for="Calories" class="text-danger font-weight-bold"></span>
-        </div>
-        @* section *@
-        <div class="mb-3">
+
+        @* Column 2 - section *@
+        <div class="mb-3 w-25 me-2 text-center">
             <label asp-for="Tastiness"></label>
             <select asp-for="Tastiness"  class="form-control" name="Tastiness">
                 <option value="">Select a number</option>
@@ -44,14 +50,14 @@
             <span asp-validation-for="Tastiness" class="text-danger font-weight-bold"></span>
         </div>
 
-        @* section *@
-        <div class="mb-3">
-            <label asp-for="Description"></label>
-            <textarea asp-for="Description" type="text" class="form-control" placeholder="Write a description..."></textarea>
+        @* column3 - section *@
+        <div class="mb-3 w-25 text-start">
+            <label asp-for="Description" ></label>
+            <textarea asp-for="Description" type="text" class="form-control mb-4 text-start" placeholder="Write a description..."></textarea>
             <span asp-validation-for="Description" class="text-danger font-weight-bold"></span>
+        <div class="text-end"><button class="btn btn-outline-dark shadow">Add a Dish</button></div>
         </div>
 
-    <button class="btn btn-outline-dark">Add a Dish</button>
 
     </form>
 
